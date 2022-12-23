@@ -1,0 +1,35 @@
+/*
+* Copyright (C) 2021 Optic_Fusion1
+*
+* This program is free software: you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation, either version 3 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+package net.lenni0451.asmevents.internal;
+
+import net.lenni0451.asmevents.IClassLoadProvider;
+import net.lenni0451.asmevents.utils.PipelineLoader;
+
+public class PipelineLoaderClassLoadProvider implements IClassLoadProvider {
+
+  private final Class<?> parentClass;
+
+  public PipelineLoaderClassLoadProvider(final Class<?> parentClass) {
+    this.parentClass = parentClass;
+  }
+
+  @Override
+  public <T> Class<T> loadClass(String name, byte[] data) {
+    return new PipelineLoader(this.parentClass).loadPipeline(name, data);
+  }
+
+}
