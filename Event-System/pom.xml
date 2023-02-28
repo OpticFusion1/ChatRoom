@@ -47,7 +47,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.asmVer>9.2</project.asmVer>
+        <project.asmVer>9.4</project.asmVer>
         <maven.compiler.source>16</maven.compiler.source>
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
