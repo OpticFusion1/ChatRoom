@@ -143,7 +143,7 @@ public class SocketServer {
           });
           clientListener.start();
         } catch (Exception e) {
-          if (!(e instanceof EOFException) && (!(e instanceof SocketException) || !e.getMessage().equalsIgnoreCase("Socket closed"))) {
+          if (!(e instanceof EOFException) && (!(e instanceof SocketException) || !"Socket closed".equalsIgnoreCase(e.getMessage()))) {
             new IOException("Unable to accept client socket", e).printStackTrace();
           }
         }

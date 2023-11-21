@@ -58,7 +58,7 @@ public class JDK14LoggerFactory implements ILoggerFactory {
     @Override
     public Logger getLogger(String name) {
         // the root logger is called "" in JUL
-        if (name.equalsIgnoreCase(Logger.ROOT_LOGGER_NAME)) {
+        if (Logger.ROOT_LOGGER_NAME.equalsIgnoreCase(name)) {
             name = "";
         }
 
