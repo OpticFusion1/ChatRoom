@@ -16,6 +16,7 @@
  */
 package optic_fusion1.packets.utils;
 
+import io.github.pixee.security.ObjectInputFilters;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -34,6 +35,7 @@ public class ObjectConverter {
   public static <T> T byteArrayToObject(final byte[] input) throws IOException {
     ByteArrayInputStream byteIn = new ByteArrayInputStream(input);
     ObjectInputStream objectIn = new ObjectInputStream(byteIn);
+    ObjectInputFilters.enableObjectFilterIfUnprotected(objectIn);
     try {
       return (T) objectIn.readObject();
     } catch (Exception ignored) {
