@@ -30,5 +30,9 @@
             <version>2.8.9</version>
             <type>jar</type>
         </dependency>
+        <dependency>
+            <groupId>io.github.pixee</groupId>
+            <artifactId>java-security-toolkit</artifactId>
+        </dependency>
     </dependencies>
 </project>

@@ -15,5 +15,15 @@
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <versions.java-security-toolkit>1.0.7</versions.java-security-toolkit>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.github.pixee</groupId>
+                <artifactId>java-security-toolkit</artifactId>
+                <version>${versions.java-security-toolkit}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
