@@ -53,7 +53,7 @@ public class LoggingOutputStream extends ByteArrayOutputStream {
   public void flush() throws IOException {
     String contents = toString(Charsets.UTF_8.name());
     super.reset();
-    if (!contents.isEmpty() && !contents.equals(SEPARATOR)) {
+    if (!contents.isEmpty() && !SEPARATOR.equals(contents)) {
       logger.logp(level, "", "", contents);
     }
   }
